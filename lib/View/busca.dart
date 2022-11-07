@@ -1,6 +1,8 @@
 import 'package:agenda_contatos/Model/contatoService.dart';
 import 'package:agenda_contatos/View/recursos/barraSuperior.dart';
+import 'package:agenda_contatos/View/recursos/cadastro.dart';
 import 'package:agenda_contatos/View/recursos/menu.dart';
+import 'package:agenda_contatos/View/recursos/perfil.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -56,7 +58,7 @@ class BuscaState extends State<Busca> {
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           new Text(
-                           contato.nome + ' ' + contato.sobrenome,
+                            contato.nome + ' ' + contato.sobrenome,
                             style: TextStyle(
                                 color: Colors.grey.shade400, fontSize: 24),
                           ),
@@ -67,7 +69,10 @@ class BuscaState extends State<Busca> {
                     ],
                   ),
                   trailing: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => new Perfil(id: contato.id,)));
+                    },
                     icon: FaIcon(
                       FontAwesomeIcons.chevronRight,
                       color: Colors.grey,
@@ -77,14 +82,17 @@ class BuscaState extends State<Busca> {
             );
           }),
 
-      // Botão flutuante
+      // Botão flutuante (Cadastro)
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.orange,
           child: FaIcon(
             FontAwesomeIcons.plus,
-            color: Colors.white,
           ),
-          onPressed: () {}),
+          onPressed: () {
+             Navigator.push(
+             context, 
+             MaterialPageRoute(builder: ((context) => Cadastro())));
+          }),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:agenda_contatos/View/busca.dart';
 import 'package:agenda_contatos/View/recursos/barraSuperior.dart';
+import 'package:agenda_contatos/View/recursos/cadastro.dart';
 import 'package:agenda_contatos/View/recursos/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -61,7 +62,6 @@ class HomeState extends State<Home> {
                               new Text('Buscar Contatos',
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 24))
-
                             ],
                           ),
                         ),
@@ -103,8 +103,9 @@ class HomeState extends State<Home> {
                         primary: Colors.orange
                       ),
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Home()));
+                        Navigator.push(
+                          context, 
+                          MaterialPageRoute(builder: ((context) => Cadastro())));
                       },
                     );
                   })
