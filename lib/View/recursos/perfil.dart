@@ -6,6 +6,7 @@ import 'package:agenda_contatos/Model/contatoService.dart';
 import 'package:agenda_contatos/View/home.dart';
 import 'package:agenda_contatos/View/recursos/barraSuperior.dart';
 import 'package:agenda_contatos/View/recursos/menu.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -21,8 +22,8 @@ class Perfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Objeto da classe Contato
-
-    Contato contato = service.listarContato().elementAt(id -1);
+   
+    Contato contato = service.listarContato().elementAt(id - 1);
 
     return Scaffold(
       //Barra de título
@@ -39,7 +40,12 @@ class Perfil extends StatelessWidget {
             // Foto
             new Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Image.asset(contato.foto, height: 350,)],
+              children: [
+                Image.asset(
+                  contato.foto,
+                  height: 350,
+                )
+              ],
             ),
 
             SizedBox(height: 25),
@@ -47,16 +53,15 @@ class Perfil extends StatelessWidget {
             // Nome
             new Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [ 
+              children: [
                 new Text(
-                contato.nome + " " + contato.sobrenome,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 3,  
-                  // wordSpacing: 3
-                ),
-                
+                  contato.nome + " " + contato.sobrenome,
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 3,
+                    // wordSpacing: 3
+                  ),
                 )
               ],
             ),
@@ -70,34 +75,28 @@ class Perfil extends StatelessWidget {
                 // Fone
                 new Text(
                   contato.fone,
-                  style: TextStyle(
-                    color: Colors.grey.shade400,
-                    fontSize: 18
-                  ),
+                  style: TextStyle(color: Colors.grey.shade400, fontSize: 18),
                 ),
 
                 // Email
-                 new Text(
+                new Text(
                   contato.email,
-                  style: TextStyle(
-                    color: Colors.grey.shade400,
-                    fontSize: 18
-                  ),
-                )        
+                  style: TextStyle(color: Colors.grey.shade400, fontSize: 18),
+                )
               ],
             ),
 
-             new Container(
+            new Container(
               padding: EdgeInsets.only(top: 25, bottom: 25),
-              child: Divider(height: 5,),
-          
+              child: Divider(
+                height: 5,
+              ),
             ),
 
-            // Ações 
+            // Ações
             new Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
                 // Ligar
                 new Column(
                   children: [
@@ -105,74 +104,62 @@ class Perfil extends StatelessWidget {
                       FontAwesomeIcons.phoneAlt,
                       color: Colors.orange.shade400,
                       size: 18,
-                      ),
-
+                    ),
                     Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-
                     new Text(
                       'Ligar',
                       style: TextStyle(
-                      color: Colors.orange.shade400,
-                      fontSize: 18,),)
-                  ],            
-                  ),
+                        color: Colors.orange.shade400,
+                        fontSize: 18,
+                      ),
+                    )
+                  ],
+                ),
                 // Mensagem
                 new Column(
                   children: [
-                    FaIcon(
-                      FontAwesomeIcons.solidCommentDots,
-                      color: Colors.orange.shade400,
-                      size: 22),
-
+                    FaIcon(FontAwesomeIcons.solidCommentDots,
+                        color: Colors.orange.shade400, size: 22),
                     SizedBox(height: 15),
-
                     new Text(
                       'Mensagem',
                       style: TextStyle(
-                        color: Colors.orange.shade400,
-                        fontSize: 18
-                      ),
-                      )  
+                          color: Colors.orange.shade400, fontSize: 18),
+                    )
                   ],
                 ),
 
                 // Vídeo
                 new Column(
                   children: [
-                    FaIcon(FontAwesomeIcons.video,
-                    color: Colors.orange.shade400,
-                    size: 28,
+                    FaIcon(
+                      FontAwesomeIcons.video,
+                      color: Colors.orange.shade400,
+                      size: 28,
                     ),
-
                     SizedBox(height: 15),
-
                     new Text(
                       'Vídeo',
                       style: TextStyle(
-                        color: Colors.orange.shade400,
-                        fontSize: 18
-                      ),
-                      )
+                          color: Colors.orange.shade400, fontSize: 18),
+                    )
                   ],
                 ),
 
                 // E-mail
                 new Column(
                   children: [
-                    FaIcon(FontAwesomeIcons.solidEnvelope,
-                    color: Colors.orange.shade400,
-                    size: 18,
+                    FaIcon(
+                      FontAwesomeIcons.solidEnvelope,
+                      color: Colors.orange.shade400,
+                      size: 18,
                     ),
-
                     Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-                
-                new Text(
-                  'E-mail',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.orange.shade400
-                  ),
-                )
+                    new Text(
+                      'E-mail',
+                      style: TextStyle(
+                          fontSize: 18, color: Colors.orange.shade400),
+                    )
                   ],
                 )
               ],

@@ -105,7 +105,7 @@ class HomeState extends State<Home> {
                       onPressed: () {
                         Navigator.push(
                           context, 
-                          MaterialPageRoute(builder: ((context) => Cadastro())));
+                          MaterialPageRoute(builder: ((context) => Cadastro()   )));
                       },
                     );
                   })

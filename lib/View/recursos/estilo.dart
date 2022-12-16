@@ -3,19 +3,20 @@ import 'package:flutter/material.dart';
 ThemeData estilo() {
   ThemeData base = ThemeData.dark();
   return base.copyWith(
-    primaryColor: Colors.red[900],
-    // appBarTheme: AppBarTheme(color: Colors.red[900]),//Colors.grey[900],
+    primaryColor: Colors.grey[900],
+    appBarTheme: AppBarTheme(color: Colors.grey[900]),//Colors.grey[900],
     colorScheme: ColorScheme.dark(),
-   /* textSelectionTheme: TextSelectionThemeData(
+    // Ao selecionar o campo de texto
+    textSelectionTheme: TextSelectionThemeData(
       cursorColor: Colors.grey.shade300
-    ),*/
+    ),
 
 
     // Botão Flutuante
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: Colors.lightBlue[50],
+      backgroundColor: Colors.orange[500],
       foregroundColor: Colors.white,
-      hoverColor: Colors.orange.shade400
+      hoverColor: Colors.lightBlue[50]
     )
   );
 }

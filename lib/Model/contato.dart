@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Classe que usamos para transportar os dados, com se fosse um pacote que tem espaço para guardar dados
 class Contato {
   int id;
   String nome;
@@ -8,7 +9,7 @@ class Contato {
   String fone;
   String foto;
 
-  // Construtor
+  // ----Construtor----(Tornando OBRIGATÓRIO passar esses valores)
   Contato({
     required this.id,
     required this.nome,
